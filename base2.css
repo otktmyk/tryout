@@ -1,0 +1,96 @@
+body{
+    background-color: lightgreen;
+}
+h1{
+    color: green;
+    font-size: 25px;
+}
+h2{
+    color: green;
+    font-size: 20px;
+    border: solid;
+    border-color: orangered;
+}
+nav{
+    margin: 50px auto 0;
+    padding: 10px;
+    width: 90%;
+    background-color: gray;
+}
+nav ul,
+nav ul li,
+nav ul li a{
+    margin: 0;
+    padding: 0;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+}
+nav ul li{
+    display: block;
+    float: left;
+    padding: 0.5em 0;
+    width: 150px;
+    border: 1px solid black;
+    background-color: lightgray;
+    text-align: center;
+}
+.clearfix{
+    *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after{
+    display: table;
+    content:"";
+    line-height: 0;
+}
+.clearfix:after{
+    clear: both;
+}
+div.content{
+    margin-left: 10%;
+    margin-right: 10%;
+    float: left;
+    width: 80%;
+    background-color: white;
+}
+article{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.description{
+    width: 100%;
+    height: 300px;
+}
+#submenu1{
+    margin-left: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    width: 80%;
+}
+#submenu2{
+    margin-left: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    width: 80%;
+}
+.hide{
+    display: none;
+}
+div.submenu{
+    height: 30px;
+}
+#float-scroll-button{
+    position: absolute;
+    float: right;
+    width: 30px;
+    margin-left: 90%;
+    display: block;
+    border: black 1px solid;
+    z-index: 2;
+    background-color: white;
+}
+

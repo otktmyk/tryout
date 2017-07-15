@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang-"ja">
+<head>
+<meta charset="UTF-8">
+<title>About programming languages</title>
+<link rel="stylesheet" href="base2.css" type="text/css">
+<script type="text/javascript" src="./lib/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var $scroll_button = $("#float-scroll-button");
+    var initOffsetTop = null;
+
+    $(document).ready(function(){
+        initOffsetTop = $scroll_button.offset().top;
+    });
+
+    $("#up").click(function(){
+        var contentTop = $("html,body").offset().top;
+        var topRow = (initOffsetTop<contentTop) ? initOffsetTop : contentTop;
+        var currentRow = $scroll_button.offset().top - 200;
+        var moveTo = (topRow>currentRow) ? topRow : currentRow; 
+        console.log(moveTo);
+        $("html,body").animate({scrollTop:moveTo});
+    });
+
+    $("#down").click(function(){
+        var topRow = $("#content").offset().top;
+        var currentRow = $scroll_button.offset().top + 200;
+        var moveTo = (topRow>currentRow) ? topRow : currentRow; 
+        console.log(moveTo);
+        $("html,body").animate({scrollTop:moveTo});
+    });
+
+    $(window).scroll(function(){
+        if(initOffsetTop == null) return;
+
+        var scrollTop = $(document).scrollTop();
+
+        if(initOffsetTop < scrollTop){
+            $scroll_button.css("position", "fixed");
+            $scroll_button.animate({top: "10"}, {duration: 0});
+        } else {
+            $scroll_button.css("position", "absolute");
+            $scroll_button.animate({top: initOffsetTop}, {duration: 0});
+        }
+    });
+
+    $("#js").on('click', function(){
+        $sub_description = $("#submenu1");
+        $sub_description.slideToggle();
+        $sub_description.toggleClass("hide");
+
+        $sub_menu = $("#submenu2");
+        $sub_menu.slideToggle();
+        $sub_menu.toggleClass("hide");
+    });
+});
+</script>
+</head>
+<body>
+<h1>About programming languages</h1>
+<nav id="navigation">
+    <ul class="clearfix">
+        <li><a>Ruby</a></li>
+        <li><a>Java</a></li>
+        <li><a>C#</a></li>
+        <li><a>Objective-C</a></li>
+        <li><button id="js">JavaScript</button></li>
+    </ul>
+</nav>
+<div class="submenu">
+    <div id="submenu1" class="hide"><span>[サブメニュ１]</span><span>[サブメニュ2]</span><span>[サブメニュ3]</span></div>
+    <div id="submenu2"><span>上のボタンでサブメニューが出てきます</span></div>
+</div>
+<div id="content" class="content">
+    <article>
+        <section>
+            <h2 id="caption" class="caption">What is Ruby?</h2>
+            <textarea class="description">
+[Title]
+    Lerem ipsum.....
+    Fusce fellus.....
+    Curabitur posuere.....
+    Ut dapibus.....
+    Morbi egestas.....
+    ・
+    ・
+    ・
+    ・
+    ・
+    aaa.....
+    ・
+    ・
+    ・
+    ・
+    ・
+    bbb.....
+    ・
+    ・
+    ・
+    ・
+    ・
+    ccc.....
+    ddd.....
+    eee.....
+    fff.....
+    ggg.....
+    hhh.....
+    iii.....
+    jjj.....
+    kkk.....
+    lll.....
+    mmm.....
+    nnn.....
+            </textarea>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge1</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge2</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge3</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge4</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge5</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge6</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge7</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge8</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge9</h2>
+            <p>ほげ</p>
+        </section>
+        <section>
+            <h2 id="caption" class="caption">hoge10</h2>
+            <p>ほげ</p>
+        </section>
+    </article>
+</div>
+<div id="float-scroll-button">
+    <button id="up">△</button>
+    <span>　</span>
+    <button id="down">▽</button>
+</div>
+</body></html>
+
